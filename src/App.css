@@ -4,3 +4,22 @@
   padding: 0;
 }
 
+html {
+
+}
+
+body {
+  height: 100vh;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.outer-container {
+  width: 360px;
+  height: 380px;
+  background-color: #0B2434;
+}
