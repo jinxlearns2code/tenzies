@@ -6,15 +6,22 @@ function App() {
   const [dieNum, setDieNum] = useState(allNewDice())
 
   function allNewDice() {
-    let arr = [];
+    const arr = [];
     for (let i = 0; i < 10; i++) {
         let num = Math.floor(Math.random() * 6) + 1
-        arr.push(num)
+        arr.push({
+          value: num, 
+          isHeld: false
+          })
     }
     return arr
   }
 
-  const diceElements = dieNum.map(die => <Die value={die} />)
+  function rollDice() {
+    setDieNum(allNewDice())
+  }
+
+  const diceElements = dieNum.map(die => <Die value={die.value} />)
   
   return (
     <main>
@@ -24,7 +31,7 @@ function App() {
       <div id="dice-container">
         {diceElements}
       </div>   
-      <button className="button">Roll</button>
+      <button className="button" onClick={rollDice}>Roll</button>
     </main>
   )
 }
