@@ -1,9 +1,23 @@
-import { useState, React } from 'react'
+import React, { useState, useEffect } from 'react'
 import './App.css'
 import Die from '../components/Die'
-import {nanoid} from "nanoid"
+import { nanoid } from "nanoid"
+
 function App() {
+
   const [dieNum, setDieNum] = useState(allNewDice())
+  const [tenzies, setTenzies] = useState(false)
+
+  useEffect(() => {
+    const allDieHeld = dieNum.every(die => die.isHeld)
+    const firstDieValue = dieNum[0].value
+    const allDieValue = dieNum.every(die => die.value === firstDieValue)
+
+    if (allDieHeld && allDieValue) {
+      setTenzies(true)
+      console.log("you've won")
+    }
+  }, [dieNum])
 
   function generateNewDice() {
     let num = Math.floor(Math.random() * 6) + 1
