@@ -81,7 +81,7 @@ function App() {
       <h1>Tenzies</h1>
 		  <p>Roll until all dice are the same. Click each die to freeze it at its current value between rolls.</p>
       <div className="clickCounter">
-        <p>Current Score: {count}</p>
+        <p>Current Score: <span>{count}</span></p>
       </div>
       <div id="dice-container" onChange={counter}>
         {diceElements}

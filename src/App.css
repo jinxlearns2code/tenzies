@@ -47,6 +47,10 @@ p {
   text-align: center;
 }
 
+.clickCounter > p > span {
+  font-weight: 700;
+}
+
 #dice-container {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
