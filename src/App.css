@@ -47,7 +47,8 @@ p {
   text-align: center;
 }
 
-.clickCounter > p > span {
+.countDisplay {
+  font-family: 'Karla', sans-serif;
   font-weight: 700;
 }
 
